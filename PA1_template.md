@@ -316,8 +316,6 @@ median: 11352
 
 
 ```r
-# I set eval = FALSE for this chunk because the chart doesn't render. Hopefully, I can fix before the deadline. If not perhaps you could be so kind as to offer your approach in the comments section. Thank you.
-
 # For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.
 
 
@@ -345,7 +343,11 @@ names(plot_df) <- c('Interval', 'WW', 'Average_Steps')
 
 # Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
 
+library(lattice)
 
-
-  plot(x = plot_df$Inteval, y = plot_df$Average_Steps, type = 'l', colour = plot_df$WW)
+xyplot(Average_Steps ~ Interval | WW, data = plot_df,
+         xlab = 'Interval', ylab = 'Number of steps',
+         type = 'l', layout=c(1, 2))
 ```
+
+![](PA1_template_files/figure-html/weekend_warrior-1.png) 

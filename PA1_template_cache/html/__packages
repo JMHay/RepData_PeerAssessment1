@@ -7,3 +7,4 @@ colorspace
 data.table
 VIM
 lubridate
+lattice
